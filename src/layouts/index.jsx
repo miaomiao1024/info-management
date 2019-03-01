@@ -1,41 +1,29 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Button } from 'antd';
 import './index.css';
-const SubMenu = Menu.SubMenu;
+import IndexView from '../routes';
+import HeaderLayout from './HeaderLayout'
+import LeftLayout from './LeftLayout'
+
+import { Link } from 'react-router-dom';
+import { Menu, Layout, Dropdown, Avatar, Icon } from 'antd';
+const { Header,Content, Sider} = Layout;
 
 class View extends Component {
-    state = {
-        collapsed: false,
-      }
-      toggleCollapsed = () => {
-        this.setState({
-          collapsed: !this.state.collapsed,
-        });
-      }
+    
   render() {
     return (
-        <div className="app-nav">
-           <div style={{ width: 240 }}>
-                <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
-                    <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-                </Button>
-                <Menu
-                    defaultSelectedKeys={['2']}
-                    mode="inline"
-                    theme="dark"
-                    inlineCollapsed={this.state.collapsed}
-                >
-                <Menu.Item key="2">
-                    <Icon type="pie-chart" />
-                    <span>设备信息</span>
-                </Menu.Item>
-                <Menu.Item key="5">
-                    <Icon type="pie-chart" />
-                    <span>应急预案</span>
-                </Menu.Item>
-                </Menu>
-            </div>
-        </div>
+      <div>
+        <Layout className={'layout custom-layout'}>
+          <HeaderLayout></HeaderLayout>
+          <Layout>
+            <LeftLayout></LeftLayout>
+            <Content className={'content-layout'}>
+              <IndexView></IndexView>
+            </Content>
+          </Layout>
+        </Layout>
+      </div>
+      
     );
   }
 }
