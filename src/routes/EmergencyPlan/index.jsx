@@ -11,7 +11,6 @@ class EmergencyPlan extends Component {
   
 
   render() {
-    
     return (
         <p>应急指挥</p>
     );

@@ -7,11 +7,9 @@ class sceneRoport extends Component {
     this.state = {
     }
   }
-
   
 
   render() {
-    
     return (
         <p>首页</p>
     );
