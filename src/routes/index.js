@@ -19,17 +19,17 @@ class RouteView extends Component{
       <Switch>
         <Route 
           exact 
-          path='/information/device' 
+          path='/infomation/report' 
           component={Loadable({
             loader: () => import(
               /* webpackChunkName: "Indicator" */ 
-              './DeviceInformation'),
+              './Report'),
             loading: Loading
           })}
         />
         <Route 
           exact 
-          path='/information/emergency' 
+          path='/infomation/plan' 
           component={Loadable({
             loader: () => import(
               /* webpackChunkName: "Marketing" */ 
@@ -37,7 +37,18 @@ class RouteView extends Component{
             loading: Loading
           })}
         />
-      </Switch>
+      
+      <Route 
+        exact 
+        path='/infomation/work' 
+        component={Loadable({
+          loader: () => import(
+            /* webpackChunkName: "Marketing" */ 
+            './Homework'),
+          loading: Loading
+        })}
+      />
+    </Switch>
     )
   }
   

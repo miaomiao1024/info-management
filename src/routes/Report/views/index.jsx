@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class DeviceInformation extends Component {
+class sceneRoport extends Component {
   constructor(props) {
     super(props);
 
@@ -13,10 +13,10 @@ class DeviceInformation extends Component {
   render() {
     
     return (
-        <p>dfefef</p>
+        <p>首页</p>
     );
   }
 }
 
-export default DeviceInformation;
+export default sceneRoport;
 
