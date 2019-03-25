@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Layout, Dropdown, Avatar, Icon } from 'antd';
+import { Menu, Layout, Icon, Dropdown, Avatar, } from 'antd';
 import './index.css'
 const { Header} = Layout;
 class HeaderLayout extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-
         menuList: [
             {
               id:'1',
-              name:'指标百科',
-              url:'/data/indicator'
+              name:'场景汇报',
+              url:'/infomation/report'
             },
             {
               id:'2',
-              name:'营销监控',
-              url:'/data/monitor'
+              name:'应急预案',
+              url:'/infomation/plan'
             },
             {
               id:'3',
-              name:'报表中心',
-              url:'/data/report'
+              name:'入廊作业',
+              url:'/infomation/work'
             },
           ],
     }
@@ -44,8 +42,31 @@ class HeaderLayout extends Component {
         <Header className="custom-header">
             <Link to="/"><div className={'logo'}>信息管理系统</div></Link>
             <div className={'userInfo'}>
-                <Link to="./" style={{ color: 'white' }}><span>登录</span></Link>
+              <Dropdown overlay={menu} placement="bottomRight">
+                    <span>
+                      <Avatar className={'avatar-custom'}>
+                        <Icon type="user" style={{ fontSize: '18px' }} />
+                      </Avatar>
+                      <span style={{ color: 'white' }}>刘苗苗</span>
+                    </span>
+              </Dropdown>
+            
             </div>
+            
+            <Menu
+              theme="dark"
+              mode="horizontal" 
+              selectedKeys={[this.state.currentTabId]}
+            >
+              {
+                this.state.menuList && this.state.menuList.map((menu) => {
+                  return menu.url === '/' ? '' : 
+                    <Menu.Item key={menu.id}>
+                      <Link to={menu.url}>{menu.name}</Link>
+                    </Menu.Item>;
+                })
+              }
+            </Menu>
         </Header>
     );
   }
