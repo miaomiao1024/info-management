@@ -1,0 +1,64 @@
+.modal-component
+  position: fixed
+  z-index: 1000
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  display: none
+  &.modal-component-small
+    .modal-component-box
+      width: 30%
+  &.modal-component-large
+    .modal-component-box
+      width: 80%
+  &.modal-component-visible
+    display: block
+  .modal-component-mask
+    position: fixed
+    left: @left
+    right: @right
+    top: @top
+    bottom: @bottom
+    background-color: rgba(0, 0, 0, 0.4)
+    z-index: 1
+  .modal-component-box-wrapper
+    overflow: auto
+    position: fixed
+    left: @left
+    right: @right
+    top: @top
+    bottom: @bottom
+    z-index: 2
+    // pointer-events: none
+  .modal-component-box
+    position: relative
+    display: flex
+    flex-flow: column
+    padding: 10px 40px 40px
+    pointer-events: auto
+    background-color: color-white
+    width: 55%
+    margin: 100px auto
+    min-height: 300px
+    border-radius: 4px
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.10), 0 15px 15px 0 rgba(0, 0, 0, 0.06)
+    .close-btn
+      position: absolute
+      right: 20px
+      top: @right
+      font-size: 16px
+      cursor: pointer
+  // &.modal-component-middle
+  //   .modal-box
+  .modal-component-content
+    flex: 1
+  .modal-component-footer
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    margin-top: 20px
+    & > *
+      margin-right: 20px
+      &:last-child
+        margin-right: 0
