@@ -1,0 +1,47 @@
+.metric-detail-page
+    .city-names
+        text-overflow: ellipsis;
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+    .panel-logic
+        display:flex;
+        height:100px;
+        justify-content: center;
+        align-items: center;
+    .panel-item
+        .indicator-group
+            margin: 10px;
+            padding: 8px;
+            border: 1px solid lightgray;
+            border-radius: 2px;
+            height: 100px;
+            .indicator-group-item 
+                margin: 5px 0;
+                > span
+                    padding: 0 5px;
+    .basic-info-container
+        border: 1px solid lightgray;
+        margin-top: 12px;
+        .label-container
+            display:flex;
+            margin: 10px 0;
+            >.title
+                text-align: right;
+                flex: 0 1 20%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            >.content
+                flex: 0 1 60%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+        .operator-container
+            display: flex;
+            flex-direction: column;
+            > *
+                width: 30%;
+                margin: 5px 100px;

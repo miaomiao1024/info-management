@@ -1,0 +1,45 @@
+.tabs-component
+    margin-top: 10px;
+    div
+        .col-content
+            text-align: center;
+            border: 1px solid #2976fb;
+            color: #2976fb;
+            display: flex;
+            justify-content: center;
+            align-items center;
+            flex-flow: nowrap column;
+            padding: 5px 30px 10px 30px;
+            cursor: pointer;
+            min-height: 108px;
+            > div:last-child
+                min-height: 50px;
+            h4
+                color: #2976fb;
+        .col-content-disabled
+            text-align: center;
+            border: 1px solid gray;
+            background-color: gray;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items center;
+            flex-flow: nowrap column;
+            padding: 5px 30px 10px 30px;
+            cursor: pointer;
+            > div:last-child
+                min-height: 50px;
+    div.item-active
+        background-color:#2976fb;
+        .col-content
+            color: white;
+            h4
+                color: white;
+    div.item-disabled
+        background-color:#C0C0C0;
+        .col-content
+            color: white;
+            border: 1px solid #C0C0C0;  
+            h4
+                color: white;
+    
